@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1em;
+    color: white;
+}
+
+.container > * {
+    padding: 20px;
+    border: 1px solid
+}
+
+.navbar {
+    grid-area: navbar;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 32px;
+}
+
+.logo{
+    margin-left: 5px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.navbar ul li{
+    padding: 10px;
+    
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.redes img {
+    width: 28px;
+}
+.redes{
+    margin: 5px 5px 0px 0px;
+
+}
+
+.header {
+    grid-area: header;
+}
+
+.header h1 {
+    text-align: center;
+}
+
+.content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.content ul {
+    margin: 10px 0px 0px 0px;
+    list-style-type: none;
+}
+
+.content ul li {
+    margin: 10px
+}
+
+.side {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.side p {
+    margin: 10px 0px 0px 0px;
+}
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-gap: 10px;
+    min-height: 100vh;
+    grid-template-rows: 45px auto 1fr auto auto;
+    grid-template-areas:
+        "navbar"
+        "header"
+        "content"
+        "sidebar"
+        "footer";
+}
+
+@media (max-width: 575px) {
+    .container {
+        grid-template-columns: 110px auto;
+        grid-template-rows: 50px auto auto 40px;
+        grid-template-areas:
+            "navbar header"
+            "navbar content"
+            "navbar content"
+            "footer footer"
+    }
+
+    .side { display: none; }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .logo{
+        margin-left: 0px;
+    }
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+    .redes {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px;
+    }
+    .redes img {
+        margin: 2px;
+    }
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header h1 {
+        font-size: 17px;
+    }
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .content h2 {
+        font-size: 20px;
+    }
+    .footer {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+    }
+    .copyright {
+        /* ¿Está bien aplicar ese margin para alinear el texto del 'p' con el icono bandera? */
+        margin: 0px 0px 2.5px 10px;
+    }
+}
+
+@media (min-width: 576px) {
+    .container {
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas:
+            "navbar navbar"
+            "header header"
+            "content sidebar"
+            "footer footer"
+    }
+}
